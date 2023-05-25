@@ -2,7 +2,7 @@ import re
 
 
 def checkLimit(operations):
-  if operations.size() >= 5:
+  if len(operations) >= 5:
     return True
   else:
     return False
@@ -28,10 +28,9 @@ def checkDigits(operations):
 
 
 def checkEachOperand(operations):
-  pattern = "[0-9]{0,4}"
 
   for operation in operations:
     for stringArr in operation.split():
-      if stringArr.isdigit() and stringArr.size() > 4:
+      if stringArr.isdigit() and len(stringArr) > 4:
         return True
   return False
